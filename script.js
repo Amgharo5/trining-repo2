@@ -125,15 +125,88 @@
   - Break Will Not Break The Loop
 */
 
-let allLis = document.querySelectorAll("ul li");
-let allDivs = document.querySelectorAll(".content div");
+// let allLis = document.querySelectorAll("ul li");
+// let allDivs = document.querySelectorAll(".content div");
 
-allLis.forEach(function (ele) {
-  ele.onclick = function () {
-    allLis.forEach(function (ele) {
-      ele.classList.remove("active");
-    });
-    this.classList.add("active");
-    allDivs.forEach((ele) => (ele.style.display = "none"));
-  };
-});
+// allLis.forEach(function (ele) {
+//   ele.onclick = function () {
+//     allLis.forEach(function (ele) {
+//       ele.classList.remove("active");
+//     });
+//     this.classList.add("active");
+//     allDivs.forEach((ele) => (ele.style.display = "none"));
+//   };
+// });
+
+/*
+  Object
+  - Create Object With Create Method
+*/
+
+/*
+  DOM
+  - What Is DOM
+  - DOM Selectors
+  --- Find Element By ID
+  --- Find Element By Tag Name
+  --- Find Element By Class Name
+  --- Find Element By CSS Selectors
+  --- Find Element By Collection
+  ------ title
+  ------ body
+  ------ images
+  ------ forms
+  ------ links
+*/
+
+// let myId = document.getElementById("my-div");
+// console.log(myId);
+// let myTag = document.getElementsByTagName("p");
+// //you can use index for specify your result
+// // console.log(myTag[0]);
+// console.log(myTag);
+// let myClassName = document.getElementsByClassName("my-span");
+// console.log(myClassName);
+// console.log(document.title);
+// console.log(document.forms[1].two);
+// console.log(document.links[0]);
+// console.log(document.links[1].href);
+
+/*
+  DOM [Get / Set Elements Content And Attributes]
+  - innerHTML
+  - textContent
+  - Change Attributes Directly
+  - Change Attributes With Methods
+  --- getAttribute
+  --- setAttribute
+
+  Search
+  - innerText
+*/
+
+let divText = document.querySelector(".js");
+let divText1 = document.querySelector(".js1");
+console.log(divText.innerHTML);
+console.log(divText.textContent);
+//set change content use innerHTML and textContent and the diffrence betwin them
+//is that innerHTML will be render as html code while textContent will not be rendered in html code
+divText.innerHTML = "This text came from <span>script.js</span> file";
+divText1.textContent = "This text came from <span>script.js</span> file";
+//change or add attribute
+
+document.images[0].src = "https://google.com";
+document.images[0].alt = "Alternate";
+document.images[0].title = "Picture";
+document.images[0].id = "pic";
+document.images[0].className = "img";
+
+//change or add attribute
+//directly to element with getAttribute() method, but it is not recommended because you have to write a lot of codes
+let myLink = document.querySelector(".link");
+
+console.log(myLink.getAttribute("class"));
+console.log(myLink.getAttribute("href"));
+
+myLink.setAttribute("href", "https://twitter.com");
+myLink.setAttribute("title", "Twitter");
